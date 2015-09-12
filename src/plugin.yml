@@ -1,0 +1,10 @@
+name: LittleBrother
+main: com.nao20010128nao.LittleBrother
+version: 1.0.0
+api: [1.0.0]
+load: STARTUP
+author: nao20010128nao
+description: Runs MCPE server on Bukkit
+website: https://github.com/nao20010128nao
+permissions:
+ pp.*:
