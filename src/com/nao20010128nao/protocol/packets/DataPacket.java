@@ -1,12 +1,17 @@
 package com.nao20010128nao.protocol.packets;
 
 import java.io.DataInputStream;
+import java.io.DataOutput;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
+
+import net.minecraft.server.v1_8_R3.NBTReadLimiter;
+import net.minecraft.server.v1_8_R3.NBTTagCompound;
 
 public abstract class DataPacket {
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -206,6 +211,58 @@ public abstract class DataPacket {
 		try {
 			dos.write(value);
 		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
+	}
+
+	protected NBTTagCompound getMetadata() {
+		try {
+			NBTTagCompound nbt = new NBTTagCompound();
+			return (NBTTagCompound) NBTTagCompound.class.getMethod("load",
+					DataInputStream.class, int.class, NBTReadLimiter.class)
+					.invoke(nbt, dis, 511, new NBTReadLimiter(10000));
+		} catch (IllegalAccessException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	protected void putMetadata(NBTTagCompound nbt) {
+		try {
+			NBTTagCompound.class.getMethod("write", DataOutput.class).invoke(
+					nbt, dos);
+		} catch (IllegalAccessException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		} catch (Throwable e) {
 			// TODO 自動生成された catch ブロック
 			e.printStackTrace();
 		}
