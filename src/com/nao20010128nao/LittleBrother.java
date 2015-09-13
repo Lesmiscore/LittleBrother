@@ -18,4 +18,15 @@ public class LittleBrother extends JavaPlugin {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
+	@Override
+	public void onEnable() {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	@Override
+	public void onDisable() {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
 }
