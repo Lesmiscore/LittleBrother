@@ -51,10 +51,27 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.util.Vector;
 
-public class LBPlayer implements Player {
+import com.nao20010128nao.protocol.packets.DataPacket;
 
-	public LBPlayer(String ip, int port, DatagramSocket sock, Server server) {
+public class LBPlayer implements Player {
+	String ip, name;
+	int port;
+	DatagramSocket sock;
+	Server server;
+	LBServer lbserver;
+	LittleBrother plugin;
+
+	public LBPlayer(String ip, int port, DatagramSocket sock, Server server,
+			LBServer lbserver, LittleBrother plugin, String name,
+			DataPacket evidence) {
 		// TODO 自動生成されたコンストラクター・スタブ
+		this.ip = ip;
+		this.port = port;
+		this.sock = sock;
+		this.server = server;
+		this.lbserver = lbserver;
+		this.plugin = plugin;
+		this.name = name;
 	}
 
 	@Override
