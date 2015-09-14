@@ -24,7 +24,7 @@ public class LittleBrother extends JavaPlugin {
 	@Override
 	public void onEnable() {
 		// TODO 自動生成されたメソッド・スタブ
-		new LBServer(getServer(), this);
+		// new LBServer(getServer(), this);
 	}
 
 	@Override
