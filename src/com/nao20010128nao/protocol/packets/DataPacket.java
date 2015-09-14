@@ -12,8 +12,12 @@ import java.util.Arrays;
 
 import net.minecraft.server.v1_8_R3.NBTReadLimiter;
 import net.minecraft.server.v1_8_R3.NBTTagCompound;
+import net.minecraft.server.v1_8_R3.PacketDataSerializer;
 
-public abstract class DataPacket {
+import com.nao20010128nao.LBPlayer;
+
+public abstract class DataPacket implements
+		net.minecraft.server.v1_8_R3.Packet<LBPlayer> {
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	DataOutputStream dos = new DataOutputStream(baos);
 	ByteArrayOutputStream.ByteArrayInputStream bais = baos.getInputStream();
@@ -440,5 +444,25 @@ public abstract class DataPacket {
 			public void close() throws IOException {
 			}
 		}
+	}
+
+	@Override
+	public void a(PacketDataSerializer paramPacketDataSerializer)
+			throws IOException {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	@Override
+	public void b(PacketDataSerializer paramPacketDataSerializer)
+			throws IOException {
+		// TODO 自動生成されたメソッド・スタブ
+
+	}
+
+	@Override
+	public void a(LBPlayer paramT) {
+		// TODO 自動生成されたメソッド・スタブ
+
 	}
 }

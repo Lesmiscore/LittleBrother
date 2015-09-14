@@ -8,6 +8,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
+import net.minecraft.server.v1_8_R3.IChatBaseComponent;
+import net.minecraft.server.v1_8_R3.PacketListener;
+
 import org.bukkit.Achievement;
 import org.bukkit.Effect;
 import org.bukkit.EntityEffect;
@@ -50,7 +53,7 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.util.Vector;
 
-public class LBPlayer implements Player {
+public class LBPlayer implements Player, PacketListener {
 
 	public LBPlayer() {
 		// TODO 自動生成されたコンストラクター・スタブ
@@ -1536,6 +1539,12 @@ public class LBPlayer implements Player {
 	public void resetTitle() {
 		// TODO 自動生成されたメソッド・スタブ
 
+	}
+
+	@Override
+	public void a(IChatBaseComponent arg0) {
+		// TODO 自動生成されたメソッド・スタブ
+		sendMessage(arg0.getText());
 	}
 
 }
