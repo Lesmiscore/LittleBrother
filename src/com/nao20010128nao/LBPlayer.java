@@ -1,5 +1,6 @@
 package com.nao20010128nao;
 
+import java.net.DatagramSocket;
 import java.net.InetSocketAddress;
 import java.util.Collection;
 import java.util.HashSet;
@@ -7,9 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
-
-import net.minecraft.server.v1_8_R3.IChatBaseComponent;
-import net.minecraft.server.v1_8_R3.PacketListener;
 
 import org.bukkit.Achievement;
 import org.bukkit.Effect;
@@ -53,9 +51,9 @@ import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.util.Vector;
 
-public class LBPlayer implements Player, PacketListener {
+public class LBPlayer implements Player {
 
-	public LBPlayer() {
+	public LBPlayer(String ip, int port, DatagramSocket sock, Server server) {
 		// TODO 自動生成されたコンストラクター・スタブ
 	}
 
@@ -1539,12 +1537,6 @@ public class LBPlayer implements Player, PacketListener {
 	public void resetTitle() {
 		// TODO 自動生成されたメソッド・スタブ
 
-	}
-
-	@Override
-	public void a(IChatBaseComponent arg0) {
-		// TODO 自動生成されたメソッド・スタブ
-		sendMessage(arg0.getText());
 	}
 
 }

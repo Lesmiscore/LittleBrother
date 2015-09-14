@@ -12,12 +12,8 @@ import java.util.Arrays;
 
 import net.minecraft.server.v1_8_R3.NBTReadLimiter;
 import net.minecraft.server.v1_8_R3.NBTTagCompound;
-import net.minecraft.server.v1_8_R3.PacketDataSerializer;
 
-import com.nao20010128nao.LBPlayer;
-
-public abstract class DataPacket implements
-		net.minecraft.server.v1_8_R3.Packet<LBPlayer> {
+public abstract class DataPacket {
 	ByteArrayOutputStream baos = new ByteArrayOutputStream();
 	DataOutputStream dos = new DataOutputStream(baos);
 	ByteArrayOutputStream.ByteArrayInputStream bais = baos.getInputStream();
@@ -27,6 +23,16 @@ public abstract class DataPacket implements
 	public DataPacket() {
 		// TODO 自動生成されたコンストラクター・スタブ
 		reset();
+	}
+
+	public DataPacket(byte[] array) {
+		// TODO 自動生成されたコンストラクター・スタブ
+		try {
+			baos.write(array);
+		} catch (IOException e) {
+			// TODO 自動生成された catch ブロック
+			e.printStackTrace();
+		}
 	}
 
 	public int pid() {
@@ -444,25 +450,5 @@ public abstract class DataPacket implements
 			public void close() throws IOException {
 			}
 		}
-	}
-
-	@Override
-	public void a(PacketDataSerializer paramPacketDataSerializer)
-			throws IOException {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
-	@Override
-	public void b(PacketDataSerializer paramPacketDataSerializer)
-			throws IOException {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
-	@Override
-	public void a(LBPlayer paramT) {
-		// TODO 自動生成されたメソッド・スタブ
-
 	}
 }
