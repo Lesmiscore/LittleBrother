@@ -1,6 +1,6 @@
-package com.nao20010128nao.protocol;
+package com.nao20010128nao.misc;
 
-public interface Info {
+public interface PEPacketIDs {
 	/**
 	 * Actual Minecraft: PE protocol version
 	 */
