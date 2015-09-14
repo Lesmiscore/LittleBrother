@@ -1,6 +1,6 @@
 package com.nao20010128nao.protocol;
 
-interface Info {
+public interface Info {
 	/**
 	 * Actual Minecraft: PE protocol version
 	 */
