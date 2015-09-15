@@ -5,8 +5,8 @@ import java.util.Set;
 
 import net.minecraft.server.v1_8_R3.NBTTagCompound;
 
+import com.nao20010128nao.misc.PEPacketIDs;
 import com.nao20010128nao.misc.tuples.Tuple3;
-import com.nao20010128nao.protocol.Info;
 
 /**
  * Based on: {@link https
@@ -14,7 +14,7 @@ import com.nao20010128nao.protocol.Info;
  * /network/protocol/AddEntityPacket.php}
  * */
 public class AddEntitiyPacket extends DataPacket {
-	public static final int NETWORK_ID = Info.ADD_ENTITY_PACKET;
+	public static final int NETWORK_ID = PEPacketIDs.ADD_ENTITY_PACKET;
 
 	public int type;
 	public double x, y, z, yaw, pitch, speedX, speedY, speedZ;
