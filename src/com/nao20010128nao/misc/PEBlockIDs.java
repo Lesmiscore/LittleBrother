@@ -1,11 +1,17 @@
 package com.nao20010128nao.misc;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Copied from: {@link https
  * ://github.com/nao20010128nao/DexModLoader-Android/blob
  * /master/javaSrc/JavaFunctions/src/modules/consistants/BlockID.java}
  * */
 public final class PEBlockIDs {
+	static Map<String, Integer> pcToPe = new HashMap<>();
+	static Map<Integer, String> peToPc = new HashMap<>();
+
 	private PEBlockIDs() {
 	}
 
